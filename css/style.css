@@ -119,10 +119,6 @@ header > div,
   margin-bottom: 36px;
 }
 
-.featured {
-  margin-left: 36px;
-}
-
 .featured h2 {
   font-size: 36px;
   font-family: 'Roboto Slab';
@@ -183,4 +179,9 @@ button:focus {
 
 button:active {
   transform: scale(0.99);
+}
+
+figure img {
+  width: 180px;
+  height: 180px;
 }
