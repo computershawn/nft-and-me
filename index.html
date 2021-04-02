@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="./css/style.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js'></script>
+  <script  src="./scripts/slashdot.js"></script>
 </head>
 
 <body>
@@ -18,9 +20,11 @@
       <button class="cta-button">Join the waitlist</button>
     </div>
   </header>
+
   <main>
     <section class="intro tall container">
-      <div>
+      <div id="slashdot"></div>
+      <div id="intro-text">
         <div class="big-text">
           <div>What is a</div>
           <div>Non-Fungible Token?</div>
@@ -30,7 +34,7 @@
             A non-fungible token (NFT) is a unit of data on a digital ledger called a blockchain, where each NFT can represent a unique digital item, and thus they are not interchangeable.
           </p>
         </div>
-      </div>
+      </div>      
     </section>
 
     <section class="less-tall container">

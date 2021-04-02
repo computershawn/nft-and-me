@@ -58,13 +58,13 @@ header > div,
 }
 
 
-.intro {
+/* .intro {
   background-image: linear-gradient(99deg, #53aec3 4%, #6d44a8 39%, rgba(11, 16, 71, 0.7) 76%);  
   color: #fff;
-}
+} */
 
 .big-text div {
-  color: #fff;
+  /* color: #fff; */
   font-size: 72px;
   font-family: 'Roboto Slab';
   font-weight: 300;
@@ -72,7 +72,7 @@ header > div,
 
 .intro .description {
   width: 360px;
-  margin: 36px 0 0 128px;
+  margin: 16px 0 0 128px;
 }
 
 .intro .description p {
@@ -84,16 +84,16 @@ header > div,
   padding: 36px 0;
 }
 
-.less-tall {
-  height: 188px;
-}
+/* .less-tall {
+  height: 288px;
+} */
 
 .big-text {
-  margin-left: 64px;
+  margin: 32px 0 0 64px;
 }
 
 .definition {
-  margin: 36px 64px;
+  margin: 80px 64px;
 }
 
 .definition p {
