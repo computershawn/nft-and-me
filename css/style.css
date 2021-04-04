@@ -3,6 +3,7 @@
   --blue: #00caff;
   --darkblue: #0b0f46;
   --content-width: 1024px;
+  --high: 448px;
 }
 
 body, html {
@@ -28,7 +29,7 @@ header > div {
 }
 
 footer {
-  height: 160px;
+  height: 128px;
 }
 
 main {
@@ -36,8 +37,10 @@ main {
 }
 
 .container {
-  width: var(--content-width);
+  width: 100vw;
   padding: 0;
+  display: flex;
+  justify-content: center;
 }
 
 header > div,
@@ -47,53 +50,69 @@ header > div,
 
 .page-title {
   color: #fff;
-  margin-left: 16px;
+  margin-left: 64px;
   font-family: 'Roboto Slab';
   font-weight: 700;
   font-size: 14px;
 }
 
 .cta-button {
-  margin-right: 16px;
+  margin-right: 64px;
 }
 
 
-/* .intro {
-  background-image: linear-gradient(99deg, #53aec3 4%, #6d44a8 39%, rgba(11, 16, 71, 0.7) 76%);  
-  color: #fff;
-} */
+.intro {
+  overflow-y: hidden;
+}
+
+.big-text {
+  margin: -48px 64px 0;
+  opacity: 0;
+  transition: margin-top 1s ease-out 400ms, opacity 1s ease-out 400ms
+}
+
+.fade-in-big-text {
+  margin-top: 0px;
+  opacity: 1;
+}
 
 .big-text div {
-  /* color: #fff; */
   font-size: 72px;
   font-family: 'Roboto Slab';
   font-weight: 300;
 }
 
-.intro .description {
+.description {
+  margin: -12px 0 0 128px;
   width: 360px;
-  margin: 16px 0 0 128px;
+  opacity: 0;
+  transition: margin-top 800ms ease-out 600ms, opacity 800ms ease-out 600ms;
 }
 
-.intro .description p {
+.fade-in-description {
+  margin-top: 4px;
+  opacity: 1;
+}
+
+.description p {
   line-height: 20px;
 }
 
-.tall {
+/* .tall {
   height: 376px;
   padding: 36px 0;
-}
+} */
 
 /* .less-tall {
   height: 288px;
 } */
 
-.big-text {
-  margin: 32px 0 0 64px;
+.definition-cont {
+  width: var(--content-width);
 }
 
 .definition {
-  margin: 80px 64px;
+  margin: 96px 64px;
 }
 
 .definition p {
@@ -106,11 +125,16 @@ header > div,
 .detailed-info {
   width: 460px;
   margin-left: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .details {
   display: flex;
+  align-items: center;
   background: var(--darkblue);
+  height: var(--high);
 }
 
 .collectibles-cont {
@@ -119,27 +143,37 @@ header > div,
   margin-bottom: 36px;
 }
 
-.featured h2 {
+.featured {
+  display: flex;
+  align-items: center;
+  height: var(--high);
+}
+
+.featured > div h2 {
   font-size: 36px;
   font-family: 'Roboto Slab';
   font-weight: 300;
   margin: 0 0 24px;
 }
 
-.featured figure {
+.featured div > figure {
   margin: 0;
 }
 
-.featured figure p {
+.featured div > figure p {
   margin: 0;
 }
 
-.featured figure p+p {
+.featured div > figure p+p {
   margin-top: 0.5em;
 }
 
 .featured figcaption {
   margin-top: 8px;
+}
+
+footer {
+  background-color: var(--darkblue);
 }
 
 /* button {
@@ -184,4 +218,46 @@ button:active {
 figure img {
   width: 180px;
   height: 180px;
+}
+
+#left-side,
+#right-side {
+  height: var(--high);
+  flex: 1;
+}
+
+#left-side {
+  background-color:#53aec3;
+}
+
+#right-side {
+  background-color: rgba(11, 16, 71);
+}
+
+#center {
+  position: relative;
+  width: var(--content-width);
+}
+
+.intro {
+  position: relative;
+}
+
+#slashdot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1024px;
+  height: 448px;
+}
+
+#intro-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

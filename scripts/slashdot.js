@@ -1,16 +1,17 @@
-let diam = 5
-let now
-let par = []
-let numPoints = 24
-let durMax = 5000
-let durMin = 1000
-let holdMax = 3000
-let holdMin = 200
+const diam = 5;
+let now;
+const par = [];
+const numPoints = 24;
+const durMax = 5000;
+const durMin = 1000;
+const holdMax = 3000;
+const holdMin = 200;
+const activeArea = 560;
+const wd = 1024;
+const ht = 448;
 
 function setup() {
-  // createCanvas(448, 448);
-
-  let renderer = createCanvas(1024, 448);
+  const renderer = createCanvas(wd, ht);
   renderer.parent("slashdot");
 
   for (let i = 0; i < numPoints; i++) {
@@ -26,6 +27,9 @@ function draw() {
     par[i].update()
     par[i].display()
   }
+
+  frameRate(30);
+  noLoop();
 }
 
 var Particle = function() {
@@ -34,8 +38,8 @@ var Particle = function() {
   this.dT = 0;
   this.lastTick = 0;
   this.moving = random(1) > 0.5 ? true : false;
-  this.ptA = createVector(width - 448 + random(448), random(height));
-  this.ptB = createVector(width - 448 + random(448), random(height));
+  this.ptA = createVector(width - activeArea + random(activeArea), random(height));
+  this.ptB = createVector(width - activeArea + random(activeArea), random(height));
   this.pos = this.moving ? this.ptA.copy() : this.ptB.copy()
 };
 
@@ -44,8 +48,8 @@ Particle.prototype.update = function() {
   this.dT = now - this.lastTick;
   if (this.moving) {
     if (this.dT <= this.dur) {
-      let nextX = easeOutQuart(this.dT, this.ptA.x, this.ptB.x - this.ptA.x, this.dur)
-      let nextY = easeOutQuart(this.dT, this.ptA.y, this.ptB.y - this.ptA.y, this.dur)
+      const nextX = easeOutQuart(this.dT, this.ptA.x, this.ptB.x - this.ptA.x, this.dur)
+      const nextY = easeOutQuart(this.dT, this.ptA.y, this.ptB.y - this.ptA.y, this.dur)
       this.pos = createVector(nextX, nextY);
     } else {
       // Set new destination
@@ -88,15 +92,15 @@ Particle.prototype.display = function() {
   }
 }
 
-let setGradientBackground = function () {
+const setGradientBackground = function () {
   var c=document.getElementById("defaultCanvas0");
   var ctx=c.getContext("2d");
 
   // Create gradient
-  var grd=ctx.createLinearGradient(0, 0, width, height);
+  var grd=ctx.createLinearGradient(0, 0, width, 0);
   grd.addColorStop(0.04, "#53aec3");
   grd.addColorStop(0.39, "#6d44a8");
-  grd.addColorStop(0.76, "rgba(11, 16, 71, 0.7)");
+  grd.addColorStop(0.76, "rgba(11, 16, 71)");
 
   // Fill with gradient
   ctx.fillStyle=grd;
