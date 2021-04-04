@@ -7,8 +7,8 @@
 }
 
 @keyframes animo3 {
-  0% { opacity: .5; transform: scale(2.4) rotate(0deg); border-color: var(--purple); border-radius: 50%;}
-  100% { opacity: 1; transform: scale(0.36) rotate(270deg); border-color: var(--blue); border-radius: 0%;}
+  0% { opacity: .5; transform: scale(1) rotate(0deg); border-color: var(--purple); border-radius: 0%;}
+  100% { opacity: 1; transform: scale(0.36) rotate(180deg); border-color: var(--blue); border-radius: 50%;}
 }
 
 .row {
@@ -27,7 +27,7 @@
   box-sizing: border-box;
   background-color: none;
   border: 1px solid var(--purple);
-  animation: animo3 3s cubic-bezier(0.25, 0.1, 0.25, 1) 0s infinite alternate;  
+  animation: animo3 3s cubic-bezier(0.25, 0.1, 0.25, 1) 0s infinite alternate-reverse;  
 }
 
 .r1 div:nth-child(1) { animation-delay: 0.00s }

@@ -261,3 +261,24 @@ figure img {
   flex-direction: column;
   justify-content: center;
 }
+
+
+#cell0 {
+  width: 400px;
+  height: 400px;
+  background: #0b0f46;
+  position: relative;
+  display: inline-block;
+}
+
+#cell1 {
+  width: 400px;
+  height: 400px;
+  background: var(--darkblue);
+  position: relative;
+  display: inline-block;
+}
+
+#cell0, #cell1, #cell2 {
+  overflow: hidden;
+}
