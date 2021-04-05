@@ -16,10 +16,12 @@ const initScrollStuff = () => {
 
     const introDiv = document.querySelector('#intro');
     const introBackground = document.querySelector('#intro .bcg');
+    const introText = document.querySelector('#intro-text');
 
     introTl
+      .to(introText, 1.4, { y: '-10%', ease: Power1.easeOut }, '-=0.2')
       .to(introBackground, 1.4, { y: '20%', ease: Power1.easeOut }, '-=0.2')
-      .to(introDiv, 0.7, { autoAlpha: 0.4, ease: Power1.easeNone }, '-=1.4');
+      .to(introDiv, 0.7, { autoAlpha: 0.2, ease: Power1.easeNone }, '-=1.4');
 
     const introScene = new ScrollMagic.Scene({
       triggerElement: '#intro',
