@@ -215,5 +215,5 @@ body.fade-in-intro {
   right: 0;
   bottom: 0;
   left: 0;
-  background-image: linear-gradient(to right, #5e7cb6 0%, #6d44a8 33%, rgba(11, 16, 71, 0.7) 90%);
+  background-image: linear-gradient(to right, rgb(94 124 182 / 72%) 0%, rgb(109 68 168 / 72%) 33%, rgb(11 16 71 / 72%) 90%);
 }
