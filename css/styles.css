@@ -30,7 +30,8 @@ header > div {
 }
 
 footer {
-  height: 128px;
+  background-color: var(--darkblue);
+  height: 96px;
 }
 
 main {
@@ -104,15 +105,6 @@ header > div,
   line-height: 20px;
 }
 
-/* .tall {
-  height: 376px;
-  padding: 36px 0;
-} */
-
-/* .less-tall {
-  height: 288px;
-} */
-
 .definition-cont {
   width: var(--content-width);
 }
@@ -140,7 +132,7 @@ header > div,
   display: flex;
   align-items: center;
   background: var(--darkblue);
-  height: var(--high);
+  padding: 48px 0;
 }
 
 .collectibles-cont {
@@ -153,6 +145,7 @@ header > div,
   display: flex;
   align-items: center;
   height: var(--high);
+  padding: 72px 0;
 }
 
 .featured > div h2 {
@@ -160,6 +153,12 @@ header > div,
   font-family: 'Roboto Slab';
   font-weight: 300;
   margin: 0 0 24px;
+}
+
+.featured figure > div {
+  width: 180px;
+  height: 180px;
+  overflow: hidden;
 }
 
 .featured div > figure {
@@ -177,17 +176,6 @@ header > div,
 .featured figcaption {
   margin-top: 8px;
 }
-
-footer {
-  background-color: var(--darkblue);
-}
-
-/* button {
-  height: 32px;
-  padding: 0 20px;
-  background-color: #6d44a8;
-  color: #fff;
-} */
 
 button {
   display: inline-block;
@@ -266,7 +254,6 @@ figure img {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* background-image: linear-gradient(to right, #5e7cb6, #0b1047); */
 }
 
 
@@ -288,4 +275,13 @@ figure img {
 
 #cell0, #cell1, #cell2 {
   overflow: hidden;
+}
+
+
+.zoom {
+  transition: transform .3s ease-out .15s; /* Animation */
+}
+
+.zoom:hover {
+  transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }

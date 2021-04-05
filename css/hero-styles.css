@@ -200,15 +200,6 @@ p {
   height: 3200px;
 }
 
-/* #intro {
-  opacity: 0;
-  transition: opacity 600ms ease-out 50ms;
-}
-
-#intro.fade-in-intro {
-  opacity: 1;
-} */
-
 body {
   opacity: 0;
   transition: opacity 600ms ease-out 50ms;
@@ -216,4 +207,13 @@ body {
 
 body.fade-in-intro {
   opacity: 1;
+}
+
+.big-gradient {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to right, #5e7cb6 0%, #6d44a8 33%, rgba(11, 16, 71, 0.7) 90%);
 }

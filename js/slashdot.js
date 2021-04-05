@@ -1,5 +1,7 @@
 const diam = 5;
 let now;
+let ctx, grd;
+let pg;
 const par = [];
 const numPoints = 24;
 const durMax = 8000;
@@ -13,23 +15,45 @@ function setup() {
   const ht = 800;
   const renderer = createCanvas(wd, ht);
   renderer.parent("slashdot");
-
+  
   for (let i = 0; i < numPoints; i++) {
     par.push(new Particle());
   }
+  
+  pg = createGraphics(wd, ht);
+
+  const c = document.getElementById("defaultCanvas0");
+  ctx = c.getContext("2d");
+  
+  // Create gradient
+  grd = ctx.createLinearGradient(0, 0, width, 0);
+  grd.addColorStop(0.04, "#5e7cb6");
+  grd.addColorStop(0.39, "#6d44a8");
+  grd.addColorStop(0.76, "#0b1047");
 
   frameRate(24);
   // noLoop();
 }
 
-function draw() {
-  setGradientBackground();
-  now = millis()
+const renderParticles = () => {
+  pg.clear();
 
   for (let i = 0; i < par.length; i++) {
     par[i].update()
     par[i].display()
   }
+}
+
+function draw() {
+  // setGradientBackground();
+  // background(0);
+  background('#0b1047');
+
+  if(window.animateHero) {
+    now = millis()
+    renderParticles();
+    image(pg, 0, 0);
+  }  
 }
 
 const getRandomPosition = () => {
@@ -77,43 +101,32 @@ Particle.prototype.update = function() {
 }
 
 Particle.prototype.display = function() {
-  strokeWeight(1);
-  noFill();
-  stroke(255)
-  ellipse(this.pos.x, this.pos.y, 8, 8);
-  noFill()
+  pg.strokeWeight(1);
+  pg.noFill();
+  pg.stroke(255)
+  pg.ellipse(this.pos.x, this.pos.y, 8, 8);
+  pg.noFill()
   
   if (this.moving) {
-    fill(255, 255, 255, map(this.dT / this.dur, 0, 1, 0, 255));
-    stroke(255, 255, 255, map(this.dT / this.dur, 0, 1, 0, 255));
-    ellipse(this.ptB.x, this.ptB.y, diam, diam);
-    stroke(243, 161, 255, map(this.dT / this.dur, 0, 1, 23, 95));
-    line(this.pos.x, this.pos.y, this.ptA.x, this.ptA.y);
+    pg.fill(255, 255, 255, map(this.dT / this.dur, 0, 1, 0, 255));
+    pg.stroke(255, 255, 255, map(this.dT / this.dur, 0, 1, 0, 255));
+    pg.ellipse(this.ptB.x, this.ptB.y, diam, diam);
+    pg.stroke(243, 161, 255, map(this.dT / this.dur, 0, 1, 23, 95));
+    pg.line(this.pos.x, this.pos.y, this.ptA.x, this.ptA.y);
   } else {
-    stroke(255, 255, 255, map(this.dT / this.hold, 0, 1, 255, 0));
-    ellipse(this.ptB.x, this.ptB.y, diam, diam);
-    stroke(243, 161, 255, map(this.dT / this.hold, 0, 1, 95, 23));
-    line(this.pos.x, this.pos.y, this.ptA.x, this.ptA.y);
+    pg.stroke(255, 255, 255, map(this.dT / this.hold, 0, 1, 255, 0));
+    pg.ellipse(this.ptB.x, this.ptB.y, diam, diam);
+    pg.stroke(243, 161, 255, map(this.dT / this.hold, 0, 1, 95, 23));
+    pg.line(this.pos.x, this.pos.y, this.ptA.x, this.ptA.y);
   }
 }
 
-const setGradientBackground = function () {
-  const c = document.getElementById("defaultCanvas0");
-  const ctx = c.getContext("2d");
+// const setGradientBackground = function () {
+//   ctx.fillStyle = grd;
+//   ctx.fillRect(0, 0, width, height); 
+// }
 
-  // Create gradient
-  const grd = ctx.createLinearGradient(0, 0, width, 0);
-  grd.addColorStop(0.04, "#5e7cb6"); // "#53aec3");
-  grd.addColorStop(0.39, "#6d44a8");
-  grd.addColorStop(0.76, "#0b1047");
-
-  // Fill with gradient
-  ctx.fillStyle=grd;
-  ctx.fillRect(0, 0, width, height); 
-}
-
-
-// QUARTIC EASING!
+// QUARTIC EASING
 // t: time from start of animation until now
 // b: value at start of animation
 // c: change in value being animated
