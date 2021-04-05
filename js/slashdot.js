@@ -2,21 +2,24 @@ const diam = 5;
 let now;
 const par = [];
 const numPoints = 24;
-const durMax = 5000;
-const durMin = 1000;
-const holdMax = 3000;
-const holdMin = 200;
-const activeArea = 560;
-const wd = 1024;
-const ht = 448;
+const durMax = 8000;
+const durMin = 2000;
+const holdMax = 6000;
+const holdMin = 400;
+const activeArea = 800;
 
 function setup() {
+  const wd = 1024;
+  const ht = 800;
   const renderer = createCanvas(wd, ht);
   renderer.parent("slashdot");
 
   for (let i = 0; i < numPoints; i++) {
     par.push(new Particle());
   }
+
+  frameRate(24);
+  // noLoop();
 }
 
 function draw() {
@@ -27,19 +30,21 @@ function draw() {
     par[i].update()
     par[i].display()
   }
-
-  frameRate(30);
-  noLoop();
 }
 
-var Particle = function() {
+const getRandomPosition = () => {
+  const pt = createVector(width - activeArea + random(activeArea), random(height));
+  return pt;
+}
+
+const Particle = function() {
   this.dur = round(random(durMin, durMax));
   this.hold = round(random(holdMin, holdMax));
   this.dT = 0;
   this.lastTick = 0;
   this.moving = random(1) > 0.5 ? true : false;
-  this.ptA = createVector(width - activeArea + random(activeArea), random(height));
-  this.ptB = createVector(width - activeArea + random(activeArea), random(height));
+  this.ptA = getRandomPosition();
+  this.ptB = getRandomPosition();
   this.pos = this.moving ? this.ptA.copy() : this.ptB.copy()
 };
 
@@ -63,7 +68,7 @@ Particle.prototype.update = function() {
   } else {
     if (this.dT >= this.hold) {
       this.ptA = this.ptB.copy()
-      this.ptB = createVector(width - 448 + random(448), random(height));
+      this.ptB = getRandomPosition();
       this.dT = 0;
       this.lastTick = now;
       this.moving = true;
@@ -93,14 +98,14 @@ Particle.prototype.display = function() {
 }
 
 const setGradientBackground = function () {
-  var c=document.getElementById("defaultCanvas0");
-  var ctx=c.getContext("2d");
+  const c = document.getElementById("defaultCanvas0");
+  const ctx = c.getContext("2d");
 
   // Create gradient
-  var grd=ctx.createLinearGradient(0, 0, width, 0);
-  grd.addColorStop(0.04, "#53aec3");
+  const grd = ctx.createLinearGradient(0, 0, width, 0);
+  grd.addColorStop(0.04, "#5e7cb6"); // "#53aec3");
   grd.addColorStop(0.39, "#6d44a8");
-  grd.addColorStop(0.76, "rgba(11, 16, 71)");
+  grd.addColorStop(0.76, "#0b1047");
 
   // Fill with gradient
   ctx.fillStyle=grd;

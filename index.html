@@ -3,17 +3,23 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>nft and me</title>
-  <link rel="stylesheet" href="./css/concentrics.css">
-  <link rel="stylesheet" href="./css/rowshapes.css">
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="css/concentrics.css">
+  <link rel="stylesheet" href="css/rowshapes.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/hero-styles.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;700&family=Source+Code+Pro&display=swap"
+    rel="stylesheet">
   <script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js'></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>  
-  <script src="./scripts/slashdot.js"></script>
-  <script src="./scripts/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+  <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script> -->
+  <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>   -->
 </head>
 
 <body>
@@ -24,8 +30,48 @@
     </div>
   </header>
 
+  <div id="intro" class="header-container fs">
+    <div class="bcg">
+        <div id="left-side"></div>
+        <div id="center">
+          <div id="slashdot"></div>
+          <div id="intro-text">
+            <div class="big-text">
+              <div>What is a</div>
+              <div>Non-Fungible Token?</div>
+            </div>
+            <div class="description">
+              <p>
+                A non-fungible token (NFT) is a unit of data on a digital ledger called a blockchain, where each NFT can
+                represent a unique digital item, and thus they are not interchangeable.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="right-side"></div>
+    </div>
+    <!-- <header class="wrapper">
+      <h1 class="title">Build Something Amazing!</h1>
+      <p>Learn ScrollMagic and GreenSock to create your own site from scratch.</p>
+    </header>
+    <span class="scroll-hint">Scroll Down</span> -->
+  </div>
+
+  <!-- <div class="main-container">
+    <article id="cb01" class="content-block">
+            <div class="wrapper">
+                <header class="slideInUp">
+                    <h1>SIMPLIFY</h1>
+                </header>
+                <section>
+                    <p class="slideInUp slideInUp2">Simplify your content to a MINIMUM.</p>
+                </section>
+            </div>
+        </article>
+  </div> -->
+
   <main>
-    <section class="intro tall container">
+    <!-- <section class="intro tall container">
       <div id="left-side"></div>
       <div id="center">
         <div id="slashdot"></div>
@@ -36,19 +82,21 @@
           </div>
           <div class="description">
             <p>
-              A non-fungible token (NFT) is a unit of data on a digital ledger called a blockchain, where each NFT can represent a unique digital item, and thus they are not interchangeable.
+              A non-fungible token (NFT) is a unit of data on a digital ledger called a blockchain, where each NFT can
+              represent a unique digital item, and thus they are not interchangeable.
             </p>
           </div>
         </div>
       </div>
       <div id="right-side"></div>
-    </section>
+    </section> -->
 
     <section class="less-tall container">
       <div class="definition-cont">
         <div class="definition">
           <p>
-            NFTs can represent digital files such as art, audio, videos, items in video games and other forms of creative work.
+            NFTs can represent digital files such as art, audio, videos, items in video games and other forms of
+            creative work.
           </p>
         </div>
       </div>
@@ -109,10 +157,16 @@
       </div>
       <div class="detailed-info">
         <p>
-          While the digital files themselves are infinitely reproducible, the NFTs representing them are tracked on their underlying blockchains and provide buyers with proof of ownership.Blockchains such as Ethereum, and Flow each have their own token standards to define their use of NFTs.
+          While the digital files themselves are infinitely reproducible, the NFTs representing them are tracked on
+          their underlying blockchains and provide buyers with proof of ownership.Blockchains such as Ethereum, and Flow
+          each have their own token standards to define their use of NFTs.
         </p>
         <p>
-          NFTs can be used to commodify digital creations, such as digital art, video game items, and music files. Access to any copy of the original file, however, is not restricted to the owner of the token. The first NFTs were Ethereum-based and appeared around 2015. Increased interest in the market for NFTs has resulted in increased speculation, as the same investors who had previously speculated on cryptocurrencies began trading NFTs at greatly increasing volumes.
+          NFTs can be used to commodify digital creations, such as digital art, video game items, and music files.
+          Access to any copy of the original file, however, is not restricted to the owner of the token. The first NFTs
+          were Ethereum-based and appeared around 2015. Increased interest in the market for NFTs has resulted in
+          increased speculation, as the same investors who had previously speculated on cryptocurrencies began trading
+          NFTs at greatly increasing volumes.
         </p>
       </div>
     </section>
@@ -126,7 +180,9 @@
         <div class="collectibles-cont">
           <!-- Item 1 -->
           <figure>
-            <img src="https://images.squarespace-cdn.com/content/v1/55076de4e4b0ce615043ba3c/1615346442028-SHXONSMQU5WMN1AVJG0B/ke17ZwdGBToddI8pDm48kMRyhYDgPk9y7GMUxyVGe-RZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpzEOKU3ynhxGCOkjkiI2jkNnwo4GpKkY3nGgozguHn9FA2PHrUGCg52mo1A4uM7YTw/image-asset.jpeg?format=750w" alt="sines">
+            <img
+              src="https://images.squarespace-cdn.com/content/v1/55076de4e4b0ce615043ba3c/1615346442028-SHXONSMQU5WMN1AVJG0B/ke17ZwdGBToddI8pDm48kMRyhYDgPk9y7GMUxyVGe-RZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpzEOKU3ynhxGCOkjkiI2jkNnwo4GpKkY3nGgozguHn9FA2PHrUGCg52mo1A4uM7YTw/image-asset.jpeg?format=750w"
+              alt="sines">
             <figcaption>
               <p>Item Title</p>
               <p>price: 0.87</p>
@@ -135,7 +191,9 @@
 
           <!-- Item 2 -->
           <figure>
-            <img src="https://images.squarespace-cdn.com/content/v1/55076de4e4b0ce615043ba3c/1613863999104-E8IB5L2BAJ7XZIY3Z2D5/ke17ZwdGBToddI8pDm48kMRyhYDgPk9y7GMUxyVGe-RZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpzEOKU3ynhxGCOkjkiI2jkNnwo4GpKkY3nGgozguHn9FA2PHrUGCg52mo1A4uM7YTw/image-asset.jpeg?format=750w" alt="sphere">
+            <img
+              src="https://images.squarespace-cdn.com/content/v1/55076de4e4b0ce615043ba3c/1613863999104-E8IB5L2BAJ7XZIY3Z2D5/ke17ZwdGBToddI8pDm48kMRyhYDgPk9y7GMUxyVGe-RZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpzEOKU3ynhxGCOkjkiI2jkNnwo4GpKkY3nGgozguHn9FA2PHrUGCg52mo1A4uM7YTw/image-asset.jpeg?format=750w"
+              alt="sphere">
             <figcaption>
               <p>Item Title</p>
               <p>price: 0.87</p>
@@ -144,7 +202,9 @@
 
           <!-- Item 3 -->
           <figure>
-            <img src="https://images.squarespace-cdn.com/content/v1/55076de4e4b0ce615043ba3c/1613864006561-9763LMVRYUHYLLGTL8PO/ke17ZwdGBToddI8pDm48kMRyhYDgPk9y7GMUxyVGe-RZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpzEOKU3ynhxGCOkjkiI2jkNnwo4GpKkY3nGgozguHn9FA2PHrUGCg52mo1A4uM7YTw/image-asset.jpeg?format=750w" alt="ravewave">
+            <img
+              src="https://images.squarespace-cdn.com/content/v1/55076de4e4b0ce615043ba3c/1613864006561-9763LMVRYUHYLLGTL8PO/ke17ZwdGBToddI8pDm48kMRyhYDgPk9y7GMUxyVGe-RZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpzEOKU3ynhxGCOkjkiI2jkNnwo4GpKkY3nGgozguHn9FA2PHrUGCg52mo1A4uM7YTw/image-asset.jpeg?format=750w"
+              alt="ravewave">
             <figcaption>
               <p>Item Title</p>
               <p>price: 0.87</p>
@@ -153,7 +213,9 @@
 
           <!-- Item 4 -->
           <figure>
-            <img src="https://images.squarespace-cdn.com/content/v1/55076de4e4b0ce615043ba3c/1615584631815-810FJJ79RW1F3K0ICUQZ/ke17ZwdGBToddI8pDm48kJK4Mm1kch8SFO9ZNkN1NT97gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmFk_H6M1tkD9NpL7mXac0oVSXdFfjxR5AjcLwGSebOiGBsFzzcw3xKxvyC_6CFFG_/image-asset.jpeg?format=750w" alt="blends">
+            <img
+              src="https://images.squarespace-cdn.com/content/v1/55076de4e4b0ce615043ba3c/1615584631815-810FJJ79RW1F3K0ICUQZ/ke17ZwdGBToddI8pDm48kJK4Mm1kch8SFO9ZNkN1NT97gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmFk_H6M1tkD9NpL7mXac0oVSXdFfjxR5AjcLwGSebOiGBsFzzcw3xKxvyC_6CFFG_/image-asset.jpeg?format=750w"
+              alt="blends">
             <figcaption>
               <p>Item Title</p>
               <p>price: 0.87</p>
@@ -162,7 +224,9 @@
 
           <!-- Item 5 -->
           <figure>
-            <img src="https://images.squarespace-cdn.com/content/v1/55076de4e4b0ce615043ba3c/1613864008338-5ADUM0GQYM8TMD0LTKNR/ke17ZwdGBToddI8pDm48kEpVg-ILAPna1wRh-xAJ9fRZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpwEv36x-EUL2-BSQ5feDhwGCbXuJBFqZ-erYzVouT8yOb9TwqchglLQOCYTRn7ZGxI/image-asset.jpeg?format=750w" alt="led wall section prototype">
+            <img
+              src="https://images.squarespace-cdn.com/content/v1/55076de4e4b0ce615043ba3c/1613864008338-5ADUM0GQYM8TMD0LTKNR/ke17ZwdGBToddI8pDm48kEpVg-ILAPna1wRh-xAJ9fRZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpwEv36x-EUL2-BSQ5feDhwGCbXuJBFqZ-erYzVouT8yOb9TwqchglLQOCYTRn7ZGxI/image-asset.jpeg?format=750w"
+              alt="led wall section prototype">
             <figcaption>
               <p>Item Title</p>
               <p>price: 0.87</p>
@@ -176,59 +240,156 @@
       </div>
     </section>
 
-  
+
     <footer class="tall container">
       <div id="cell2">
 
         <div id="r1" class="row r1">
-          <div></div> <div></div> <div></div> <div></div>
-          <div></div> <div></div> <div></div> <div></div>
-          <div></div> <div></div> <div></div> <div></div>
-          <div></div> <div></div> <div></div> <div></div>
-          <div></div> <div></div> <div></div> <div></div>
-          <div></div> <div></div> <div></div> <div></div>
-          <div></div> <div></div> <div></div> <div></div>
-          <div></div> <div></div> <div></div> <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
 
         <div id="r2" class="row r2">
-          <div></div> <div></div> <div></div> <div></div>
-          <div></div> <div></div> <div></div> <div></div>
-          <div></div> <div></div> <div></div> <div></div>
-          <div></div> <div></div> <div></div> <div></div>
-          <div></div> <div></div> <div></div> <div></div>
-          <div></div> <div></div> <div></div> <div></div>
-          <div></div> <div></div> <div></div> <div></div>
-          <div></div> <div></div> <div></div> <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
 
         <div id="r3" class="row r3">
-          <div></div> <div></div> <div></div> <div></div>
-          <div></div> <div></div> <div></div> <div></div>
-          <div></div> <div></div> <div></div> <div></div>
-          <div></div> <div></div> <div></div> <div></div>
-          <div></div> <div></div> <div></div> <div></div>
-          <div></div> <div></div> <div></div> <div></div>
-          <div></div> <div></div> <div></div> <div></div>
-          <div></div> <div></div> <div></div> <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
 
         <div id="r4" class="row r4">
-          <div></div> <div></div> <div></div> <div></div>
-          <div></div> <div></div> <div></div> <div></div>
-          <div></div> <div></div> <div></div> <div></div>
-          <div></div> <div></div> <div></div> <div></div>
-          <div></div> <div></div> <div></div> <div></div>
-          <div></div> <div></div> <div></div> <div></div>
-          <div></div> <div></div> <div></div> <div></div>
-          <div></div> <div></div> <div></div> <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
       </div>
     </footer>
   </main>
-  <!-- <footer>
-    <div>footer content</div>
-  </footer> -->
+  <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+  <script src="js/scrolly.js"></script>
+  <script src="js/slashdot.js"></script>
+  <script src="js/script.js"></script>
 </body>
 
 </html>

@@ -3,6 +3,7 @@
   --blue: #00caff;
   --darkblue: #0b0f46;
   --content-width: 1024px;
+  --hero-height: 800px;
   --high: 448px;
 }
 
@@ -54,6 +55,8 @@ header > div,
   font-family: 'Roboto Slab';
   font-weight: 700;
   font-size: 14px;
+  display: flex;
+  align-items: center;
 }
 
 .cta-button {
@@ -66,27 +69,30 @@ header > div,
 }
 
 .big-text {
-  margin: -48px 64px 0;
+  margin: -24px 64px -12px;
   opacity: 0;
-  transition: margin-top 1s ease-out 400ms, opacity 1s ease-out 400ms
+  transition: margin-top 800ms ease-out 500ms, margin-bottom 800ms ease-out 500ms, opacity 600ms ease-out 500ms;
 }
 
 .fade-in-big-text {
-  margin-top: 0px;
+  margin-top: 0;
+  margin-bottom: 0;
   opacity: 1;
 }
 
 .big-text div {
-  font-size: 72px;
+  font-size: 80px;
   font-family: 'Roboto Slab';
   font-weight: 300;
+  text-shadow: 5px 5px 4px #00000021;
 }
 
 .description {
-  margin: -12px 0 0 128px;
+  margin: 0 0 0 128px;
   width: 360px;
   opacity: 0;
-  transition: margin-top 800ms ease-out 600ms, opacity 800ms ease-out 600ms;
+  /* transition: margin-top 800ms ease-out 800ms, opacity 800ms ease-out 800ms; */
+  transition: opacity 800ms ease-out 800ms;  
 }
 
 .fade-in-description {
@@ -222,12 +228,12 @@ figure img {
 
 #left-side,
 #right-side {
-  height: var(--high);
+  height: var(--hero-height);
   flex: 1;
 }
 
 #left-side {
-  background-color:#53aec3;
+  background-color:#5e7cb6;
 }
 
 #right-side {
@@ -248,7 +254,7 @@ figure img {
   top: 0;
   left: 0;
   width: 1024px;
-  height: 448px;
+  height: var(--hero-height);
 }
 
 #intro-text {
@@ -260,6 +266,7 @@ figure img {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  /* background-image: linear-gradient(to right, #5e7cb6, #0b1047); */
 }
 
 
